@@ -6,13 +6,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import id.ac.unila.SayurIn.Model.OrderModels;
 import id.ac.unila.SayurIn.Model.Session;
 import id.ac.unila.SayurIn.R;
@@ -65,7 +62,6 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull CartAdapter.ViewHolder holder, int position) {
-//        final CartModels cartModels = data.get(position);
         OrderModels orderModels = data.get(position);
         final int sum = 0;
 
