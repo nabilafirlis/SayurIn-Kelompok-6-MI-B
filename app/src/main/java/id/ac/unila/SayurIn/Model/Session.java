@@ -1,14 +1,10 @@
 package id.ac.unila.SayurIn.Model;
 
-//Class ini digunakan untuk memanipulasi data pada SharedPreferences
-
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-
 import java.lang.reflect.Type;
 import java.util.List;
 
@@ -23,22 +19,7 @@ public class Session{
     public Session(Context context) {
         preferences = PreferenceManager.getDefaultSharedPreferences(context);
     }
-
-
-    public void addCart(List<OrderModels> list){
-        Gson gson = new Gson();
-        String json = gson.toJson(list);
-        preferences.edit().putString(KEY_CART, json).apply();
-    }
-
-
-    public List<OrderModels> getCart(){
-        Gson gson = new Gson();
-        String json = preferences.getString(KEY_CART, null);
-        Type type = new TypeToken<List<OrderModels>>() {}.getType();
-        return gson.fromJson(json, type);
-    }
-
+    
     public Session(SharedPreferences preferences) {
         this.preferences = preferences;
     }
