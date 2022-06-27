@@ -20,6 +20,21 @@ public class Session{
         preferences = PreferenceManager.getDefaultSharedPreferences(context);
     }
     
+        public void addCart(List<OrderModels> list){
+        Gson gson = new Gson();
+        String json = gson.toJson(list);
+        preferences.edit().putString(KEY_CART, json).apply();
+    }
+
+
+    public List<OrderModels> getCart(){
+        Gson gson = new Gson();
+        String json = preferences.getString(KEY_CART, null);
+        Type type = new TypeToken<List<OrderModels>>() {}.getType();
+        return gson.fromJson(json, type);
+    }
+
+    
     public Session(SharedPreferences preferences) {
         this.preferences = preferences;
     }
