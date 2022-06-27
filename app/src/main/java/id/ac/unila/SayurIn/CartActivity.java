@@ -44,7 +44,7 @@ public class CartActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         
         if(cart.size() == 0){
-            Toast.makeText(this, "cart masih kosong kaka, gamau beli nih ?", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "cart masih kosong, Masukkan barang yang ingin dibeli", Toast.LENGTH_SHORT).show();
         }
 
         final ItemTouchHelper.SimpleCallback simpleItemTouchCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
