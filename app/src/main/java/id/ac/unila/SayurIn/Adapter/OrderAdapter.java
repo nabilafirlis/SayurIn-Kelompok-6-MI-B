@@ -9,12 +9,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.List;
-
 import id.ac.unila.SayurIn.Array.ArraySaveOrder;
 import id.ac.unila.SayurIn.Model.OrderModels;
 import id.ac.unila.SayurIn.R;
@@ -32,13 +29,11 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
     CartAdapter cartAdapter;
 
     //Sebuah listener yang telah didefinisikan sebelumnya.
-//    private ItemClickListener listener;
 
     public OrderAdapter(Context context, List<OrderModels> items) {
         this.context = context;
         this.items = items;
         this.orderArray = new ArraySaveOrder(this.items.size());
-//        this.listener = listener;
         cartAdapter = new CartAdapter();
     }
 
@@ -109,8 +104,6 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
         public TextView titleGetData, hargaGetData, rpGetData, descGet, orderDet;
         public ImageView imGetData;
         public Button incOrdered, decOrdered, orderedOkay;
-//        ItemClickListener itemClickListener;
-
         public ViewHolder(View itemView) {
             super(itemView);
             titleGetData = itemView.findViewById(R.id.titleGet);
@@ -122,18 +115,6 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
             orderDet = itemView.findViewById(R.id.textGet);
             descGet = itemView.findViewById(R.id.descGet);
             orderedOkay = itemView.findViewById(R.id.btnOrder);
-//            itemView.setOnClickListener(this);
         }
-
-//        @Override
-//        public void onClick(View view) {
-//            this.itemClickListener.onItemClick(view, getLayoutPosition());
-//        }
-//
-//        public void setItemClickListener(ItemClickListener ic) {
-//            this.itemClickListener = ic;
-//        }
-//    }
-
     }
 }
